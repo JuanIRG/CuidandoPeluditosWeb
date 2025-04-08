@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peluditos - PetSitter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rosaPastel: '#FADADD', // tono pastel suave
+            rosaFuerte: '#F28AB2',
+            grisSuave: '#F9F9F9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-grisSuave font-sans text-gray-800">
+    <!-- NAVBAR -->
+    <!-- Top section with logo and social icons - visible only on desktop -->
+    <div class=" bg-rosaPastel py-3 shadow-sm hidden md:block">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <!-- Logo grande -->
+          <div class="text-2xl font-bold text-rosaFuerte">
+            Cuidando Peluditos 🐾
+          </div>
+          
+          <!-- Redes sociales -->
+          <div class="flex space-x-4">
+              <a href="#" class="text-gray-600 hover:text-rosaFuerte transition">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                  </svg>
+              </a>
+              <!-- Other social icons remain unchanged -->
+          </div>
+      </div>
+    </div>
+  
+    <header class="bg-rosaPastel shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between md:justify-center items-center py-4">
+          <!-- Logo for mobile only -->
+          <div class="text-2xl font-bold text-rosaFuerte md:hidden">
+              Cuidando Peluditos 🐾
+          </div>
+          
+          <!-- Navigation menu - centered on desktop -->
+          <nav class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#quien-soy" class="hover:text-rosaFuerte transition">Quién soy</a>
+            <a href="#mi-trabajo" class="hover:text-rosaFuerte transition">Mi trabajo</a>
+            <a href="#clientes" class="hover:text-rosaFuerte transition">Clientes</a>
+            <a href="#clientes" class="hover:text-rosaFuerte transition">Tarifas</a>
+            <a href="#contacto" class="hover:text-rosaFuerte transition">Contacto</a>
+          </nav>
+          
+          <!-- Botón para móviles -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-rosaFuerte focus:outline-none text-xl">
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 text-center ">
+        <a href="#quien-soy" class="block py-2 text-sm hover:text-rosaFuerte">Quién soy</a>
+        <a href="#mi-trabajo" class="block py-2 text-sm hover:text-rosaFuerte">Mi trabajo</a>
+        <a href="#clientes" class="block py-2 text-sm hover:text-rosaFuerte">Clientes</a>
+        <a href="#clientes" class="block py-2 text-sm hover:text-rosaFuerte">Tarifas</a>
+        <a href="#contacto" class="block py-2 text-sm hover:text-rosaFuerte">Contacto</a>
+      </div>
+    </header>
+    <!-- HERO SECTION -->
+  <section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1628105123517-4f2d89108aa5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-center text-white drop-shadow-lg">
+        Cuidando a peluditos con amor ❤️
+      </h1>
+    </div>
+  </section>
+  <!-- QUIÉN SOY SECTION -->
+  <section id="quien-soy" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Texto -->
+      <div>
+        <h2 class="text-4xl font-bold text-rosaFuerte mb-4">Hola, soy Dani 🐶</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Amante de los animales desde siempre. Mi pasión es cuidar a los peluditos como si fueran parte de mi familia. 
+          Con amor, paciencia y compromiso, me aseguro de que estén felices, tranquilos y bien atendidos mientras sus humanos están fuera. 
+          Cada mascota tiene una personalidad única, y disfruto creando vínculos especiales con cada una de ellas.
+        </p>
+      </div>
+
+      <!-- Carrusel -->
+      <div class="relative w-full h-80 overflow-hidden rounded-2xl shadow-lg">
+        <div class="absolute inset-0 transition-opacity duration-700 ease-in-out" id="slide1">
+          <img src="imagenes/prueba1.avif" alt="Daniela con un perrito" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out" id="slide2">
+          <img src="imagenes/prueba2.avif" alt="Daniela acariciando un gato" class="w-full h-full object-cover" />
+        </div>
+        <!-- Botones del carrusel -->
+        <button onclick="showSlide(1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-rosaFuerte hover:text-white">◀</button>
+        <button onclick="showSlide(2)" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-rosaFuerte hover:text-white">▶</button>
+      </div>
+    </div>
+  </section>
+  </body>
+</html>
