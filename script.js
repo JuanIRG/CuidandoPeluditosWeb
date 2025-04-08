@@ -8,8 +8,17 @@ btn.addEventListener('click', () => {
 });
 
 let currentSlide = 1;
+    const totalSlides = 2;
+
     function showSlide(slide) {
+      for (let i = 1; i <= totalSlides; i++) {
+        document.getElementById('slide' + i).classList.toggle('opacity-0', i !== slide);
+      }
       currentSlide = slide;
-      document.getElementById('slide1').classList.toggle('opacity-0', slide !== 1);
-      document.getElementById('slide2').classList.toggle('opacity-0', slide !== 2);
     }
+
+    // Cambio automático de slides cada 5 segundos
+    setInterval(() => {
+      let nextSlide = currentSlide + 1 > totalSlides ? 1 : currentSlide + 1;
+      showSlide(nextSlide);
+    }, 3000); // 
