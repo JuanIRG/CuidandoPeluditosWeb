@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peluditos - PetSitter</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script defer src="script.js"></script>
   <script>
     tailwind.config = {
@@ -23,10 +24,10 @@
     }
   </script>
 </head>
-<body class="bg-grisSuave font-sans text-gray-800">
+<body class="bg-rose-50 font-sans text-gray-800">
        <!-- NAVBAR -->
     <!-- Top section with logo and social icons - visible only on desktop -->
-    <div class="bg-white py-3 shadow-sm hidden md:block">
+    <div class="bg-white py-6 shadow-sm hidden md:block">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <!-- Logo grande -->
             <div class="text-2xl font-bold text-rosaFuerte">
@@ -65,7 +66,7 @@
             </div>
             
             <!-- Navigation menu - centered on desktop -->
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+            <nav class="hidden md:flex space-x-8 text-sm font-medium mb-4">
               <a href="#quien-soy" class="hover:text-rosaFuerte transition">Quién soy</a>
               <a href="#mi-trabajo" class="hover:text-rosaFuerte transition">Mi trabajo</a>
               <a href="#clientes" class="hover:text-rosaFuerte transition">Clientes</a>
@@ -191,5 +192,184 @@
        </div>
      </div>
    </section>
+    <!-- CLIENTES SECTION - Carousel con tabs -->
+    <section id="clientes" class="bg-purpuraSuave py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center text-rosaFuerte mb-10">Clientes felices 🐾</h2>
+        
+        <!-- Desktop version - visible on sm and above -->
+        <div id="clientes-tabs" class="hidden sm:block">
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500" id="grupo1">
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente1.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Luna">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Luna 🐕</h3>
+              <p class="text-gray-600">Una perrita muy juguetona y cariñosa que ama las caminatas largas y los mimos.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente2.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Milo">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Trigo 🐈</h3>
+              <p class="text-gray-600">Un gatito curioso y tranquilo, siempre buscando un lugar soleado para dormir.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente3.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Toby">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Canelon 🐾</h3>
+              <p class="text-gray-600">Le encanta correr y jugar con la pelota. Siempre tiene energía para dar y regalar.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 hidden" id="grupo2">
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente4.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Nala">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Mia 🐶</h3>
+              <p class="text-gray-600">Una cachorra activa que ama jugar con otros perritos y explorar nuevos olores.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente5.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Simba">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Lobito 🐾</h3>
+              <p class="text-gray-600">Un perro sabio y tranquilo. Siempre atento y cariñoso con quienes lo rodean.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4">
+              <img src="imagenes/cliente6.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Simba">
+              <h3 class="text-xl font-semibold text-rosaFuerte">Donner 🐾</h3>
+              <p class="text-gray-600">Un perro sabio y tranquilo. Siempre atento y cariñoso con quienes lo rodean.</p>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8 space-x-3">
+            <button onclick="mostrarGrupo(1)" id="tab1" class="w-4 h-4 rounded-full bg-rosaFuerte opacity-70"></button>
+            <button onclick="mostrarGrupo(2)" id="tab2" class="w-4 h-4 rounded-full bg-rosaFuerte opacity-30"></button>
+          </div>
+        </div>
+        
+        <!-- Mobile version - visible only on xs -->
+        <div id="clientes-mobile" class="block sm:hidden">
+          <div class="relative overflow-hidden touch-pan-x">
+            <div id="mobile-carousel" class="flex transition-transform duration-300 ease-in-out">
+              <!-- Cliente 1 -->
+              <div class="w-full flex-shrink-0 px-2">
+                <div class="bg-white rounded-xl shadow-md p-4">
+                  <img src="imagenes/cliente1.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Luna">
+                  <h3 class="text-xl font-semibold text-rosaFuerte">Luna 🐕</h3>
+                  <p class="text-gray-600">Una perrita muy juguetona y cariñosa que ama las caminatas largas y los mimos.</p>
+                </div>
+              </div>
+              <!-- Cliente 2 -->
+              <div class="w-full flex-shrink-0 px-2">
+                <div class="bg-white rounded-xl shadow-md p-4">
+                  <img src="imagenes/cliente2.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Milo">
+                  <h3 class="text-xl font-semibold text-rosaFuerte">Trigo 🐈</h3>
+                  <p class="text-gray-600">Un gatito curioso y tranquilo, siempre buscando un lugar soleado para dormir.</p>
+                </div>
+              </div>
+              <!-- Cliente 3 -->
+              <div class="w-full flex-shrink-0 px-2">
+                <div class="bg-white rounded-xl shadow-md p-4">
+                  <img src="imagenes/cliente3.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Toby">
+                  <h3 class="text-xl font-semibold text-rosaFuerte">Canelon 🐾</h3>
+                  <p class="text-gray-600">Le encanta correr y jugar con la pelota. Siempre tiene energía para dar y regalar.</p>
+                </div>
+              </div>
+              <!-- Cliente 4 -->
+              <div class="w-full flex-shrink-0 px-2">
+                <div class="bg-white rounded-xl shadow-md p-4">
+                  <img src="imagenes/cliente4.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Nala">
+                  <h3 class="text-xl font-semibold text-rosaFuerte">Mia 🐶</h3>
+                  <p class="text-gray-600">Una cachorra activa que ama jugar con otros perritos y explorar nuevos olores.</p>
+                </div>
+              </div>
+              <!-- Cliente 5 -->
+              <div class="w-full flex-shrink-0 px-2">
+                <div class="bg-white rounded-xl shadow-md p-4">
+                  <img src="imagenes/cliente5.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Simba">
+                  <h3 class="text-xl font-semibold text-rosaFuerte">Lobito 🐾</h3>
+                  <p class="text-gray-600">Un perro sabio y tranquilo. Siempre atento y cariñoso con quienes lo rodean.</p>
+                </div>
+              </div>
+                 <!-- Cliente 6 -->
+                 <div class="w-full flex-shrink-0 px-2">
+                  <div class="bg-white rounded-xl shadow-md p-4">
+                    <img src="imagenes/cliente6.avif" class="w-full h-48 object-cover rounded-md mb-4" alt="Simba">
+                    <h3 class="text-xl font-semibold text-rosaFuerte">Donner 🐾</h3>
+                    <p class="text-gray-600">Un perro sabio y tranquilo. Siempre atento y cariñoso con quienes lo rodean.</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+          <!-- Mobile dots navigation -->
+          <div class="flex justify-center mt-8 space-x-3" id="mobile-dots">
+            <!-- Dots will be generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFAS SECTION -->
+<section id="tarifas" class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center text-rosaFuerte mb-12">Tarifas 💰</h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Paseos -->
+      <div class="bg-purpuraSuave rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-rosaFuerte mb-4">Paseos</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li><strong>$12.000</strong> por 1 hora <br><span class="text-sm text-gray-600">Incluye 45 min de paseo + ida y regreso</span></li>
+          <li><strong>$23.000</strong> por 2 horas <br><span class="text-sm text-gray-600">Incluye 90 min de paseo + tiempo de traslado</span></li>
+        </ul>
+      </div>
+
+      <!-- Cuidados por día -->
+      <div class="bg-verdeSuave rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-rosaFuerte mb-4">Cuidados por día</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li><strong>$30.000</strong> solo cuidado<br><span class="text-sm text-gray-600">De 3 a 24 horas. No incluye paseos.</span></li>
+          <li><strong>$40.000</strong> con paseo incluido<br><span class="text-sm text-gray-600">Cuidados y paseos durante el día.</span></li>
+        </ul>
+      </div>
+
+      <!-- Eventos especiales -->
+      <div class="bg-purpuraSuave rounded-xl shadow-lg p-6">
+        <h3 class="text-2xl font-bold text-rosaFuerte mb-4">Eventos especiales</h3>
+        <p class="text-gray-700 mb-2">Tarifa conversable según tipo de evento.</p>
+        <p class="text-gray-700"><strong>Cobro por hora</strong></p>
+        <p class="text-sm text-gray-600 mt-2">Contáctame para coordinar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO SECTION -->
+<section id="contacto" class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold text-rosaFuerte mb-8">Contáctame 📱</h2>
+    <div class="flex justify-center space-x-6 text-xl">
+      <a href="https://instagram.com/tucuenta" target="_blank" class="text-pink-500 hover:text-pink-600">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://wa.me/56912345678" target="_blank" class="text-green-500 hover:text-green-600">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO BOTTOM FIXED EN MOBILE -->
+<div class="fixed bottom-0 left-0 right-0 bg-white shadow-md p-2 flex justify-around md:hidden z-50">
+  <a href="https://instagram.com/tucuenta" target="_blank" class="text-pink-500 text-lg flex items-center space-x-1">
+    <i class="fab fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+  <a href="https://wa.me/56912345678" target="_blank" class="text-green-500 text-lg flex items-center space-x-1">
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-rose-50 text-center pt-6 pb-16 mt-16">
+  <p class="text-gray-700 text-sm">© 2025 Peluditos. Todos los derechos reservados. Sitio creado con amor 🐾</p>
+</footer>
+
+
+
   </body>
 </html>
